@@ -1,9 +1,11 @@
-package es.unileon.schoolSpring.springapp.domain;
+package es.unileon.mistep.domain;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import es.unileon.mistep.domain.Office;
 
 public class OfficeTests {
 

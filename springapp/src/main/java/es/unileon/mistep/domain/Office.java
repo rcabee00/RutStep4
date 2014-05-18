@@ -1,4 +1,4 @@
-package es.unileon.schoolSpring.springapp.domain;
+package es.unileon.mistep.domain;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package es.unileon.schoolSpring.springapp.service;
+package es.unileon.mistep.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -9,7 +9,8 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.unileon.schoolSpring.springapp.domain.Office;
+import es.unileon.mistep.domain.Office;
+import es.unileon.mistep.service.SimpleOfficeManager;
 
 public class SimpleOfficeManagerTest {
 

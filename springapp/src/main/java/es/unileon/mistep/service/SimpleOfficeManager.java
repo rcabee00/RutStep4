@@ -1,6 +1,6 @@
-package es.unileon.schoolSpring.springapp.service;
+package es.unileon.mistep.service;
 
-import es.unileon.schoolSpring.springapp.domain.Office;
+import es.unileon.mistep.domain.Office;
 
 
 

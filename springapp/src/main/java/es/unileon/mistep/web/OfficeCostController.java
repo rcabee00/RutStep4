@@ -1,4 +1,4 @@
-package es.unileon.schoolSpring.springapp.web;
+package es.unileon.mistep.web;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import es.unileon.schoolSpring.springapp.service.OfficeManager;
+import es.unileon.mistep.service.OfficeManager;
 @Controller
 public class OfficeCostController {
 	protected final Log logger = LogFactory.getLog(getClass());

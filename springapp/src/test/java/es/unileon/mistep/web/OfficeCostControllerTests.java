@@ -1,4 +1,4 @@
-package es.unileon.schoolSpring.springapp.web;
+package es.unileon.mistep.web;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +7,8 @@ import java.util.Map;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
-import es.unileon.schoolSpring.springapp.service.SimpleOfficeManager;
+import es.unileon.mistep.service.SimpleOfficeManager;
+import es.unileon.mistep.web.OfficeCostController;
 
 public class OfficeCostControllerTests {
 

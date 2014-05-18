@@ -1,4 +1,4 @@
-package es.unileon.schoolSpring.springapp.web;
+package es.unileon.mistep.web;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import es.unileon.schoolSpring.springapp.service.EmployeeCostModify;
-import es.unileon.schoolSpring.springapp.service.OfficeManager;
+import es.unileon.mistep.service.EmployeeCostModify;
+import es.unileon.mistep.service.OfficeManager;
 
 @Controller
 @RequestMapping(value="/costmodify.htm")
