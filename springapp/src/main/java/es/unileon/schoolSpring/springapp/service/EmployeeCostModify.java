@@ -4,7 +4,11 @@ import javax.validation.constraints.Min;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+/**
+ * Class that represents a modification in the employee costs
+ * @author rut
+ *
+ */
 public class EmployeeCostModify {
 	/** Logger for this class and subclasses */
     protected final Log logger = LogFactory.getLog(getClass());
