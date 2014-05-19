@@ -17,7 +17,7 @@
 
 
 	<form:form method="post" commandName="employeeCostModify">
-		<p>Previous employee cost: E</p>
+		<p>Previous employee cost: <%=request.getParameter("previous")%> E</p>
 
 		<table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0"
 			cellpadding="5">

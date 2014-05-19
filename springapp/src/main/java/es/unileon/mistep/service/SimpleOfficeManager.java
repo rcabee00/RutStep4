@@ -1,10 +1,11 @@
 package es.unileon.mistep.service;
 
 import es.unileon.mistep.domain.Office;
+
 /**
  * 
  * @author rut
- *
+ * 
  */
 public class SimpleOfficeManager implements OfficeManager {
 

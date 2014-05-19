@@ -12,7 +12,7 @@
     <p>Total expenses:		<i><c:out value="${model.expenses}"/>E</i></p>
    
     <br>
-    <a href="<c:url value="costmodify.htm"/>">Modify Cost</a>
+    <a href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify Cost</a>
     <br>
   </body>
 </html>
