@@ -28,39 +28,17 @@ public class Office implements Serializable {
 	 * The expenses in the salaries of the employees
 	 */
 	private double employeeCost;
-	/**
-	 * The total expenses or costs of the office
-	 */
-	private double totalExpenses;
+	
 
 	/**
-	 * Returns the expenses of the office
-	 * 
-	 * @return the total expenses
+	 * Returns the total expenses
+	 * @return total expenses
 	 */
 	public double getTotalExpenses() {
-
-		return totalExpenses;
-	}
-
-	/**
-	 * Sets the expenses of the office
-	 */
-	public void setTotalExpenses() {
 		double total = this.localCost + this.utilitiesCost + this.employeeCost;
-		this.totalExpenses = round(total, 4);
+		total = round(total, 4);
+		return total;
 	}
-
-	/**
-	 * Sets the expenses of the office
-	 * 
-	 * @param totalExpenses
-	 *            the amount to set
-	 */
-	public void setTotalExpenses(double totalExpenses) {
-		this.totalExpenses = totalExpenses;
-	}
-
 	/**
 	 * Sets the local costs
 	 * 
@@ -106,7 +84,7 @@ public class Office implements Serializable {
 	 *            the amount to set
 	 */
 	public void setEmployeeCost(double employeeCost) {
-		this.employeeCost = employeeCost;
+		this.employeeCost = round(employeeCost,4);
 	}
 
 	/**
@@ -157,8 +135,7 @@ public class Office implements Serializable {
 		buffer.append("Office: " + description + ";");
 		buffer.append("Local cost: " + localCost);
 		buffer.append("Utilities cost: " + utilitiesCost);
-		buffer.append("Employee cost: " + employeeCost);
-		buffer.append("Total expenses: " + totalExpenses);
+		buffer.append("Employee cost: " + employeeCost);		
 		return buffer.toString();
 	}
 

@@ -16,7 +16,7 @@ public class SimpleOfficeManager implements OfficeManager{
 		if (office != null) {
             
                office.setEmployeeCost(amount);
-               office.setTotalExpenses();
+               office.getTotalExpenses();
             
         }   
 	}

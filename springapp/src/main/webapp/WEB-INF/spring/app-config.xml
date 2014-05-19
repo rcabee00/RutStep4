@@ -17,7 +17,7 @@
          <property name="localCost" value="500.75"/>
          <property name="utilitiesCost" value="100.50"/>
          <property name="employeeCost" value="3500.00"/> 
-         <property name="totalExpenses" value="4101.25"/>        
+                
          
        </bean>
         <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">

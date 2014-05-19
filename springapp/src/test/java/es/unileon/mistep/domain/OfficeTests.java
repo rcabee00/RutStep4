@@ -59,8 +59,7 @@ public class OfficeTests {
 		assertEquals(0, 0, 0);
 		office.setEmployeeCost(testEmployeeCost);
 		office.setLocalCost(testLocalCost);
-		office.setUtilitiesCost(testUtilitiesCost);
-		office.setTotalExpenses();
+		office.setUtilitiesCost(testUtilitiesCost);		
 		assertEquals(testExpenses, office.getTotalExpenses(), 0);
 	}
 

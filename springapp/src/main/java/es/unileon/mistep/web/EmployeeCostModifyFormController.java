@@ -46,8 +46,7 @@ public class EmployeeCostModifyFormController {
     @RequestMapping(method = RequestMethod.GET)
     protected EmployeeCostModify formBackingObject(HttpServletRequest request) throws ServletException {
     	EmployeeCostModify employeeCostModify= new EmployeeCostModify();
-    	employeeCostModify.setAmount(2);
-    	employeeCostModify.setPrevious(previous);
+    	employeeCostModify.setAmount(0);    	
         return employeeCostModify;
     }
 

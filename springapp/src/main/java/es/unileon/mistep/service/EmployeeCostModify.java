@@ -26,11 +26,4 @@ public class EmployeeCostModify {
         return amount;
     }
 
-	public double getPrevious() {
-		return previous;
-	}
-
-	public void setPrevious(double previous) {
-		this.previous = previous;
-	}
 }

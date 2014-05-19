@@ -33,8 +33,7 @@ public class SimpleOfficeManagerTest {
 		office.setDescription(OFFICE_DESCRIPTION);
 		office.setEmployeeCost(EMPLOYEE_COST);
 		office.setLocalCost(LOCAL_COST);
-		office.setUtilitiesCost(UTILITIES_COST);
-		office.setTotalExpenses();
+		office.setUtilitiesCost(UTILITIES_COST);		
 		officeManager.setOffice(office);
 	}
 
@@ -51,8 +50,7 @@ public class SimpleOfficeManagerTest {
 		assertEquals(OFFICE_DESCRIPTION, office.getDescription());
 		assertEquals(EMPLOYEE_COST, office.getEmployeeCost(), 0);
 		assertEquals(LOCAL_COST, office.getLocalCost(), 0);
-		assertEquals(UTILITIES_COST, office.getUtilitiesCost(), 0);
-		office.setTotalExpenses();
+		assertEquals(UTILITIES_COST, office.getUtilitiesCost(), 0);		
 		assertEquals(EXPENSES_COST, office.getTotalExpenses(), 0);
 
 	}
