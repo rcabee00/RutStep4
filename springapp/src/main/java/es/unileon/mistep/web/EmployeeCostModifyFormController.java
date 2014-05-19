@@ -14,50 +14,61 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.unileon.mistep.service.EmployeeCostModify;
 import es.unileon.mistep.service.OfficeManager;
-
+/**
+ * 
+ * @author rut
+ *
+ */
 @Controller
-@RequestMapping(value="/costmodify.htm")
+@RequestMapping(value = "/costmodify.htm")
 public class EmployeeCostModifyFormController {
-	
-    /** Logger for this class and subclasses */
-    protected final Log logger = LogFactory.getLog(getClass());
-    
-    
-    @Autowired
-    private OfficeManager officeManager;
-    private double previous;
-   
-    @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(@Valid EmployeeCostModify employeeCostModify, BindingResult result)
-    {
-        if (result.hasErrors()) {
-            return "costmodify";
-        }
-		
-        double amount = employeeCostModify.getAmount();
-        logger.info("Modifiying employee cost to " + amount+ "E.");
 
-        officeManager.employeeCostModify(amount);
-        previous = officeManager.getOffice().getEmployeeCost();
-        logger.info("Previous employee costs " + previous + "E.");
-        return "redirect:/hello.htm";
-    }
+	/** Logger for this class and subclasses */
+	protected final Log logger = LogFactory.getLog(getClass());
 
-    @RequestMapping(method = RequestMethod.GET)
-    protected EmployeeCostModify formBackingObject(HttpServletRequest request) throws ServletException {
-    	EmployeeCostModify employeeCostModify= new EmployeeCostModify();
-    	employeeCostModify.setAmount(0);    	
-        return employeeCostModify;
-    }
+	@Autowired
+	private OfficeManager officeManager;
 
-    public void setOfficeManager(OfficeManager officeManager) {
-        this.officeManager = officeManager;
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public String onSubmit(@Valid EmployeeCostModify employeeCostModify,
+			BindingResult result) {
+		if (result.hasErrors()) {
+			return "costmodify";
+		}
 
-    public OfficeManager getOfficeManager() {
-        return officeManager;
-    }
+		double amount = employeeCostModify.getAmount();
+		logger.info("Modifiying employee cost to " + amount + "E.");
 
-	
+		officeManager.employeeCostModify(amount);
+
+		return "redirect:/hello.htm";
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	protected EmployeeCostModify formBackingObject(HttpServletRequest request)
+			throws ServletException {
+		EmployeeCostModify employeeCostModify = new EmployeeCostModify();
+		employeeCostModify.setAmount(0);
+		return employeeCostModify;
+	}
+
+	/**
+	 * Method that sets the office manager
+	 * 
+	 * @param officeManager
+	 *            the office manager
+	 */
+	public void setOfficeManager(OfficeManager officeManager) {
+		this.officeManager = officeManager;
+	}
+
+	/**
+	 * Method that returns the office manager
+	 * 
+	 * @return the office manager
+	 */
+	public OfficeManager getOfficeManager() {
+		return officeManager;
+	}
 
 }

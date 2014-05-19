@@ -59,7 +59,7 @@ public class Office implements Serializable {
 	}
 
 	/**
-	 * Sets the utililities cost
+	 * Sets the utilities cost
 	 * 
 	 * @param utilitiesCost
 	 *            the amount to set

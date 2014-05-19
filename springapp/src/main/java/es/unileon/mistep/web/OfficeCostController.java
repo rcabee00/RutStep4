@@ -16,30 +16,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import es.unileon.mistep.service.OfficeManager;
+
+/**
+ * 
+ * @author rut
+ * 
+ */
 @Controller
 public class OfficeCostController {
 	protected final Log logger = LogFactory.getLog(getClass());
 
-    @Autowired
-    private OfficeManager officeManager;
+	@Autowired
+	private OfficeManager officeManager;
 
-    @RequestMapping(value="/hello.htm")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@RequestMapping(value = "/hello.htm")
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
-    	
+		Map<String, Object> myModel = new HashMap<String, Object>();
+		myModel.put("office", this.officeManager.getOffice());
+		myModel.put("expenses", this.officeManager.getOffice()
+				.getTotalExpenses());
 
-        Map<String, Object> myModel = new HashMap<String, Object>();       
-        myModel.put("office", this.officeManager.getOffice());
-        myModel.put("expenses", this.officeManager.getOffice().getTotalExpenses());
-        
+		return new ModelAndView("hello", "model", myModel);
+	}
 
-        return new ModelAndView("hello", "model", myModel);
-    }
-
-
-    public void setOfficeManager(OfficeManager officeManager) {
-        this.officeManager = officeManager;
-    }
+	public void setOfficeManager(OfficeManager officeManager) {
+		this.officeManager = officeManager;
+	}
 
 }
