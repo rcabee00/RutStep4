@@ -17,13 +17,17 @@
 
 
 	<form:form method="post" commandName="employeeCostModify">
-		<p>Previous employee cost: <%=request.getParameter("previous")%> E</p>
-
+		
 		<table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0"
-			cellpadding="5">
+			cellpadding="5"><br> 
+			<td align="right" width="40%">Previous employee cost:</td>
+			<td align="right" width="20%"><%=request.getParameter("previous")%>E</td>
+			<br>
+
+
 			<tr>
 				<td align="right" width="40%">Modify employee cost :</td>
-				<td width="20%"><form:input path="amount" /></td>
+				<td width="10%"><form:input path="amount" /></td>
 				<td width="60%"><form:errors path="amount" cssClass="error" />
 				</td>
 			</tr>
