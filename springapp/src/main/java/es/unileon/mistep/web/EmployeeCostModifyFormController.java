@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.unileon.mistep.service.EmployeeCostModify;
 import es.unileon.mistep.service.OfficeManager;
+
 /**
+ * Class  handles requests to the page that changes the employee cost called
+ * costmodify
  * 
  * @author rut
- *
+ * 
  */
 @Controller
 @RequestMapping(value = "/costmodify.htm")

@@ -28,10 +28,10 @@ public class Office implements Serializable {
 	 * The expenses in the salaries of the employees
 	 */
 	private double employeeCost;
-	
 
 	/**
 	 * Returns the total expenses
+	 * 
 	 * @return total expenses
 	 */
 	public double getTotalExpenses() {
@@ -39,6 +39,7 @@ public class Office implements Serializable {
 		total = round(total, 4);
 		return total;
 	}
+
 	/**
 	 * Sets the local costs
 	 * 
@@ -84,7 +85,7 @@ public class Office implements Serializable {
 	 *            the amount to set
 	 */
 	public void setEmployeeCost(double employeeCost) {
-		this.employeeCost = round(employeeCost,4);
+		this.employeeCost = round(employeeCost, 4);
 	}
 
 	/**
@@ -129,13 +130,13 @@ public class Office implements Serializable {
 				/ Math.pow(10, decimals);
 	}
 
-	@Override
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Office: " + description + ";");
 		buffer.append("Local cost: " + localCost);
 		buffer.append("Utilities cost: " + utilitiesCost);
-		buffer.append("Employee cost: " + employeeCost);		
+		buffer.append("Employee cost: " + employeeCost);
+		buffer.append("Total expenses: " + this.getTotalExpenses());
 		return buffer.toString();
 	}
 

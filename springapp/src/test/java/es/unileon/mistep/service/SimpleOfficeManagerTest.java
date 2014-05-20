@@ -15,10 +15,7 @@ import es.unileon.mistep.service.SimpleOfficeManager;
 public class SimpleOfficeManagerTest {
 
 	private SimpleOfficeManager officeManager;
-
 	private Office office;
-
-	
 	private static Double EMPLOYEE_COST = new Double(127.34);
 	private static Double LOCAL_COST = new Double(200.00);
 	private static Double UTILITIES_COST = new Double(400.39);
@@ -28,12 +25,12 @@ public class SimpleOfficeManagerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		officeManager = new SimpleOfficeManager();		
+		officeManager = new SimpleOfficeManager();
 		office = new Office();
 		office.setDescription(OFFICE_DESCRIPTION);
 		office.setEmployeeCost(EMPLOYEE_COST);
 		office.setLocalCost(LOCAL_COST);
-		office.setUtilitiesCost(UTILITIES_COST);		
+		office.setUtilitiesCost(UTILITIES_COST);
 		officeManager.setOffice(office);
 	}
 
@@ -46,11 +43,11 @@ public class SimpleOfficeManagerTest {
 	@Test
 	public void testGetOffice() {
 		Office office = officeManager.getOffice();
-		assertNotNull(office);		
+		assertNotNull(office);
 		assertEquals(OFFICE_DESCRIPTION, office.getDescription());
 		assertEquals(EMPLOYEE_COST, office.getEmployeeCost(), 0);
 		assertEquals(LOCAL_COST, office.getLocalCost(), 0);
-		assertEquals(UTILITIES_COST, office.getUtilitiesCost(), 0);		
+		assertEquals(UTILITIES_COST, office.getUtilitiesCost(), 0);
 		assertEquals(EXPENSES_COST, office.getTotalExpenses(), 0);
 
 	}
@@ -60,21 +57,9 @@ public class SimpleOfficeManagerTest {
 		try {
 			officeManager = new SimpleOfficeManager();
 			officeManager.employeeCostModify(200.00);
-			;
+
 		} catch (NullPointerException ex) {
 			fail("Office  is null.");
-		}
-	}
-
-	@Test
-	public void testModifyCostWithEmptyListOfOffices() {
-		try {
-			officeManager = new SimpleOfficeManager();
-			officeManager.setOffice(new Office());
-			officeManager.employeeCostModify(MODIFY_COST);
-			
-		} catch (Exception ex) {
-			fail("Office is empty.");
 		}
 	}
 
