@@ -9,7 +9,7 @@
     <p>Local cost:		<i><c:out value="${model.office.localCost}"/>E</i></p>
     <p>Utilities cost:		<i><c:out value="${model.office.utilitiesCost}"/>E</i></p>
     <p>Employee cost:		<i><c:out value="${model.office.employeeCost}"/>E</i></p>
-    <p>Total expenses:		<i><c:out value="${model.expenses}"/>E</i></p>
+    <p>Total expenses:		<i><c:out value="${model.office.getTotalExpenses()}"/>E</i></p>
    
     <br>
     <a href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify Cost</a>
