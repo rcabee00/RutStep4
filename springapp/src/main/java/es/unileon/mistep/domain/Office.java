@@ -2,16 +2,25 @@ package es.unileon.mistep.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Class representing a office
  * 
  * @author rut
  * 
  */
-
+@Entity
+@Table(name="offices") 
 public class Office implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	@Id
+    @Column(name = "id")
+	private int id;
 	/**
 	 * The description of the office
 	 */
@@ -28,7 +37,14 @@ public class Office implements Serializable {
 	 * The expenses in the salaries of the employees
 	 */
 	private double employeeCost;
+	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 	/**
 	 * Returns the total expenses
 	 * 
@@ -139,5 +155,7 @@ public class Office implements Serializable {
 		buffer.append("Total expenses: " + this.getTotalExpenses());
 		return buffer.toString();
 	}
+
+
 
 }
