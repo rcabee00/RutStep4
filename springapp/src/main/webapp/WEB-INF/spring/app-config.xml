@@ -12,7 +12,8 @@
 		</property>
 	</bean>
 	<bean id="office1" class="es.unileon.mistep.domain.Office">
-		<property name="description" value="0 - LEON-ORDOGNO II" />
+		<property name="id" value="1" />
+		<property name="description" value=" LEON-ORDOGNO II" />
 		<property name="localCost" value="500.75" />
 		<property name="utilitiesCost" value="100.50" />
 		<property name="employeeCost" value="3500.00" />
