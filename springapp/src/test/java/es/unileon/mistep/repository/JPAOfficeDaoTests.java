@@ -2,8 +2,6 @@ package es.unileon.mistep.repository;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -22,16 +20,15 @@ public class JPAOfficeDaoTests {
 	    }
 
 	    @Test
-	    public void testGetProductList() {
-	        List<Office> products = officeDao.getOfficeList();
-	        assertEquals(products.size(), 3, 0);	   
+	    public void testGetOffice() {
+	        Office office = officeDao.getOffice();
+	       
 	    }
 
 	    @Test
-	    public void testSaveProduct() {
-	        List<Office> offices = officeDao.getOfficeList();
+	    public void testSaveProduct() {        
 
-	        Office off = offices.get(0);
+	        Office off = officeDao.getOffice();
 	        
 	        Double localCost = off.getLocalCost();
 	        off.setLocalCost(400.75);	        
@@ -42,8 +39,8 @@ public class JPAOfficeDaoTests {
 	        
 	        officeDao.saveOffice(off);
 	        
-	        List<Office> updatedOffices = officeDao.getOfficeList();
-	        Office off2 = updatedOffices.get(0);
+	        Office off2 = officeDao.getOffice();
+	        
 	        
 	        assertEquals(off2.getLocalCost(),400.75,0);
 	        assertEquals(off2.getUtilitiesCost(),1400.75,0);

@@ -6,19 +6,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-	<bean id="productManager" class="es.unileon.mistep.service.SimpleOfficeManager">
-		<property name="office">
-			<ref bean="office1" />
-		</property>
-	</bean>
-	<bean id="office1" class="es.unileon.mistep.domain.Office">
-		<property name="id" value="1" />
-		<property name="description" value=" LEON-ORDOGNO II" />
-		<property name="localCost" value="500.75" />
-		<property name="utilitiesCost" value="100.50" />
-		<property name="employeeCost" value="3500.00" />
-
-	</bean>
+	
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages" />

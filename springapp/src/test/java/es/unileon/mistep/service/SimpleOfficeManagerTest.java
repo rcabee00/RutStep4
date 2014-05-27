@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.unileon.mistep.domain.Office;
+import es.unileon.mistep.repository.InMemoryOfficeDao;
+import es.unileon.mistep.repository.OfficeDao;
 import es.unileon.mistep.service.SimpleOfficeManager;
 
 public class SimpleOfficeManagerTest {
@@ -31,12 +33,15 @@ public class SimpleOfficeManagerTest {
 		office.setEmployeeCost(EMPLOYEE_COST);
 		office.setLocalCost(LOCAL_COST);
 		office.setUtilitiesCost(UTILITIES_COST);
-		officeManager.setOffice(office);
+		OfficeDao officeDao = new InMemoryOfficeDao(office);
+        officeManager.setOfficeDao(officeDao);
+		//officeManager.setOffice(office);
 	}
 
 	@Test
 	public void testGetEmptyOffice() {
-		officeManager = new SimpleOfficeManager();
+		officeManager = new SimpleOfficeManager();		 
+	    officeManager.setOfficeDao(new InMemoryOfficeDao(null));	       
 		assertNull(officeManager.getOffice());
 	}
 
@@ -56,6 +61,7 @@ public class SimpleOfficeManagerTest {
 	public void testModifyCostWithNullOffice() {
 		try {
 			officeManager = new SimpleOfficeManager();
+			officeManager.setOfficeDao(new InMemoryOfficeDao(null));
 			officeManager.employeeCostModify(200.00);
 
 		} catch (NullPointerException ex) {
