@@ -9,7 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.unileon.mistep.domain.Office;
 
-
+/**
+ * 
+ * @author rut
+ *
+ */
 
 @Repository(value = "officeDao")
 public class JPAOfficeDao implements OfficeDao{
@@ -30,7 +34,7 @@ public class JPAOfficeDao implements OfficeDao{
     	List<Office> offices = em.createQuery("select off from Office off order by off.id").getResultList();
         return offices.get(2);
         
-    	//return (Office) em.createQuery("select * from Office  where id=1").getSingleResult();
+    	
     }
 
     @Transactional(readOnly = false)

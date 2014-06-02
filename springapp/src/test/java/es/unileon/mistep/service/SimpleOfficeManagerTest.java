@@ -35,7 +35,7 @@ public class SimpleOfficeManagerTest {
 		office.setUtilitiesCost(UTILITIES_COST);
 		OfficeDao officeDao = new InMemoryOfficeDao(office);
         officeManager.setOfficeDao(officeDao);
-		//officeManager.setOffice(office);
+		
 	}
 
 	@Test

@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import es.unileon.mistep.service.OfficeManager;
 
 /**
- * Class handles requests to the page that shows information about one office
+ * Class that handles requests to the page that shows information about one office
  * 
  * @author rut
  * 
